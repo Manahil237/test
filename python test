@@ -1,0 +1,31 @@
+secret_number = 50
+attempts = 0
+max_attempts = 5
+has_won = False
+print("Welcome to the number guesssing game")
+print("Guess the secret number, it must be in between 1 AND 100.")
+while attempts < max_attempts:
+    guess= int(input("Enter your guess: "))
+    attempts += 1 
+    if guess == secret_number:
+        print("You guessed correctly!")
+        has_won = True
+    else:
+       diff= (guess - secret_number)
+    print("you did not guess correctly")
+    if diff > 20:
+        print ("Ice cold")
+    elif diff > 10:
+        print ("Cold")
+    elif diff > 5:
+        print("Warm")
+    else:
+        print("Hot")
+
+    remaining_hearts= max_attempts - attempts
+    print("remaining hearts:", end= "")
+    for i in range(remaining_hearts):
+        print("❤️", end="  ")
+    if not has_won:
+        print("you lost!")
+        
